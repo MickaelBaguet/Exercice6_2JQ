@@ -29,6 +29,7 @@
 <script>
   // Fonction modifiant la couleur du text
   // On récupère le nom de la couleur avec un split sur le deuxième index
+  // Sur un mouseleave on set la couleur en noir
   $(document).ready(function(){
     // $(".color").mouseover(function(){
     //   var colorName = $(this).attr('class').split(" ")[1];
@@ -37,11 +38,13 @@
     // $(".color").mouseleave(function(){
     //   $("#text").css("color", "black");
     // });
-    $(".color").hover(function(){
-      var colorName = $(this).attr('class').split(" ")[1];
-      $("#text").css("color", colorName);
+    // Fonction avec utilisation d'une fonction callback
+    // fonction callback: se lance quand la fonction première et réalisée entièrement
+    $('.color').hover(function(){
+      var colorName = $(this).attr('class').split(' ')[1];
+      $('#text').css('color', colorName);
       }, function(){
-      $("#text").css("color", "black");
+      $('#text').css('color', 'black');
     });
   });
 </script>
